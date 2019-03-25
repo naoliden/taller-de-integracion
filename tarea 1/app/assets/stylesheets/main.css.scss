@@ -1,0 +1,31 @@
+$color: white;
+$text_color: black;
+
+body{background: $color}
+// Color de fondo #000 negro
+
+input, select, textarea{
+    color: $text_color;
+}
+
+textarea:focus, input:focus {
+    color: $text_color;
+}
+
+table{
+ margin-left: auto;
+ margin-right: auto;
+ width: 400px;
+}
+
+th , td {
+  padding: 10px;
+}
+
+// tr:nth=child(even) {
+//   background-color: #fff;
+// }
+//
+// tr:nth=child(odd) {
+//   background-color: #ddd;
+// }

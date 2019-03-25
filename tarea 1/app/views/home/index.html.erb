@@ -1,0 +1,52 @@
+<section id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <h2>Peliculas de Starwars</h2>
+        <p class="lead">Todas las peliculas con su info.</p>
+
+          <table border="1">
+            <tr>
+              <th>Nombre</th>
+              <th>Año de lanzamiento</th>
+              <th>Director</th>
+              <th>Productores</th>
+              <th>Episodio en la saga</th>
+            </tr>
+
+            <% @calls.each do |call| %>
+
+              <tr>
+                <td style="text-align:left">
+                  <a href='search?type=films'>
+                    <%= call['title'] %>
+                  </a>
+                </td>
+
+                <td style="text-align:center"><%= call['release_date'] %></td>
+
+                <td style="text-align:center">
+                  <a href= 'search?type=people&info=<%= call['director'].rpartition(" ").first.downcase %>' >
+                    <%= call['director'] %>
+                  </a>
+                </td>
+
+
+                <td style="text-align:center">
+                <% call['producer'].split(',').each do |name| %>
+                    <a href='search?type=people&info=<%= name.rpartition(" ").first.downcase %>' >
+                      <%= name %>
+                    </a>
+                <% end %>
+                </td>
+
+                <td style="text-align:center"><%= call['episode_id'] %></td>
+              </tr>
+
+            <% end %>
+          </table>
+
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,38 @@
+<html>
+
+  <h3>API response <br>
+  </h3>
+  <body>
+
+
+
+
+    <table border="0">
+    <caption>RESULTADOS</caption>
+
+      <% @calls.each do |call| %>
+      <tr>
+        <td style="text-align:left">
+
+          <a href='search?info=<%= call['name'] %>&type=people'>
+            <%= call['name'] %>
+          </a>
+        </td>
+        <td>
+          <a href='search?info=<%= call['title'] %>&type=films'>
+            <%= call['title'] %>
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+
+    <br>
+    <br>
+    <div class='col-md-4 text-center'>
+    <%= button_to "Volver al inicio", root_url, :method => :get%>
+    </div>
+    <br>
+    <br>
+  </body>
+</html>

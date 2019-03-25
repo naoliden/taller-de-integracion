@@ -1,0 +1,77 @@
+<html>
+
+  <h2>
+    API response<br>
+    Resultados <br>
+  </h2>
+  <body>
+
+    <br><h3>Personajes</h3><br>
+
+
+    <% @people.each do |resultado| %>
+      <table border="1">
+        <% resultado.each do |key, val|%>
+          <tr>
+            <td><%= key.to_s %> </td>
+            <td><%= val %></td>
+          </tr>
+        <% end %>
+      </table>
+      <br>
+    <% end %>
+
+
+    <br><br><h3>Peliculas</h3><br>
+
+    <% @films.each do |resultado| %>
+      <table border="1">
+        <% resultado.each do |key, val|%>
+          <tr>
+            <td><%= key.to_s %> </td>
+            <td><%= val %></td>
+          </tr>
+        <% end %>
+      </table>
+      <br>
+    <% end %>
+
+    <br><br><h3>Naves</h3><br>
+
+    <% @starships.each do |resultado| %>
+      <table border="1">
+        <% resultado.each do |key, val|%>
+          <tr>
+            <td><%= key.to_s %> </td>
+            <td><%= val %></td>
+          </tr>
+        <% end %>
+      </table>
+      <br>
+    <% end %>
+
+    <br><br><h3>Planetas</h3><br>
+
+    <% @planets.each do |resultado| %>
+      <table border="1">
+        <% resultado.each do |key, val|%>
+          <tr>
+            <td><%= key.to_s %> </td>
+            <td><%= val %></td>
+          </tr>
+        <% end %>
+      </table>
+      <br>
+    <% end %>
+
+
+
+    <br>
+    <br>
+    <div class='col-md-4 text-center'>
+    <%= button_to "Volver al inicio", root_url, :method => :get%>
+    </div>
+    <br>
+    <br>
+  </body>
+</html>

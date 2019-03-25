@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+       table, td, th {
+          border: 1px solid black;
+          /* width: 300px; */
+       }
+    </style>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Tarea01</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <header class="bg-primary text-white">
+      <div class="container text-center">
+        <h1>Tarea 01 - Taller de Integracion - API SWAPI</h1>
+        <br>
+          <%= form_tag home_path do %>
+          <div class="field">
+            <%= text_field_tag :info %>
+            <%= select_tag(:type,
+            options_for_select([
+                                ['Pelicula', 'films'],
+                                ['Persona', 'people'],
+                                ['Nave', 'starships'],
+                                ['Planeta', 'planets']
+                                ]))%>
+            <%= submit_tag "Buscar", class: "btn"%>
+          </div>
+          <% end %>
+        <br>
+      </div>
+    </header>
+
+    <%= yield %>
+
+  </body>
+</html>
